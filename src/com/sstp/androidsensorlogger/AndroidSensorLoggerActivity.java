@@ -9,6 +9,7 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 
+
 import android.app.Activity;
 import android.os.Bundle;
 import android.os.Environment;
@@ -70,7 +71,7 @@ public class AndroidSensorLoggerActivity extends Activity implements LocationLis
 		        File gpxfile = new File(root, fileLocation);
 		        FileWriter gpxwriter = new FileWriter(gpxfile, true);
 		        CSVWriter out = new CSVWriter(gpxwriter);
-		        String[] log = new String[] {lat, lon};
+		        String[] log = new String[] {lat, lon, String.valueOf(System.currentTimeMillis())};
 		        out.writeNext(log);
 		        out.flush();
 		        
